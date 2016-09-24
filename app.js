@@ -12,8 +12,11 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+var http = require('http');
+
 // create a new express server
 var app = express();
+var routes = require("./routes/routes.js")(app);
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
